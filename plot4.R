@@ -6,7 +6,7 @@ hpcdata <- fread("sed '1p;/^[12]\\/2\\/2007/!d' household_power_consumption.txt"
 SampleTime <- paste(hpcdata$Date, hpcdata$Time)
 SampleTime <- strptime(SampleTime, format = "%d/%m/%Y %H:%M:%S")
 
-png(filename = "plot4.png")
+png(filename = "plot4.png", bg = "transparent")
 par(mfrow = c(2,2))
 plot(SampleTime, hpcdata$Global_active_power, type="l", 
      ylab="Global Active Power", xlab= "")
